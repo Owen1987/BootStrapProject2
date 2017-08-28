@@ -1,0 +1,61 @@
+（网站管理后台）
+	1.后台首页
+		第一步：后台导航
+		第二步：后台安全提示
+		第三步：网站统计数据
+		第四步：网站热帖
+		第五步：网站访客统计
+			Chart.js插件
+				官网地址：http://www.chartjs.org/
+				使用方法
+					1.引入chart.js
+					2.创建一个canvas画布
+						<canvas id="canvas"></canvas>
+					3.引入曲线图（Line chart）js格式代码
+						var lineChartData = {
+	//X坐标数据
+	labels : ["2","4","6","8","10","12","14","16","18","20","22","24"],
+	datasets : [
+		{	
+			//统计表的背景颜色
+			fillColor : "rgba(255,255,255,0)",
+			//统计表画笔颜色
+			strokeColor : "rgba(0, 0,0, 1)",
+			//点的颜色
+			pointColor : "rgba(155, 39, 39, 1);",
+			//点边框的颜色
+			pointStrokeColor : "#fff",
+			//鼠标触发时点的颜色
+			pointHighlightFill : "#fff",
+			//鼠标触发时点边框的颜色
+			pointHighlightStroke : "rgba(220,220,220,1)",
+			//Y坐标数据
+			data : [1,102,3,4,5,5,6,7,8,8,9,9]
+		},
+		{
+			fillColor : "rgba(255,255,255,0)",
+			strokeColor : "rgba(92, 184, 92, 1)",
+			pointColor : "rgba(23, 126, 23, 1)",
+			pointStrokeColor : "#fff",
+			pointHighlightFill : "#fff",
+			pointHighlightStroke : "rgba(151,187,205,1)",
+			data : [2,2,1,4,2,4,5,7,8,8,4,3]
+		}
+	]
+
+}
+
+window.onload = function(){
+	var ctx = document.getElementById("canvas").getContext("2d");
+	window.myLine = new Chart(ctx).Line(lineChartData, {
+		responsive: true
+	});
+}
+		第六步：服务器状态
+		第七步：团队留言板
+	2.用户管理页面
+		1.用户列表
+		2.搜索用户
+		2.添加用户
+	3.内容管理页面
+	4.TAG标签管理页面
